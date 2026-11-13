@@ -15,7 +15,7 @@ Trabaja un hito a la vez. No avances sin que el anterior funcione.
   con los tokens de `docs/DISENO.md` y `src/lib/tauri.ts` vacío.
 - `npm run tauri dev` abre la ventana.
 
-## Hito 1: lista con datos de prueba
+## Hito 1: lista con datos de prueba ✅
 - Pantalla de lista igual a `docs/diseno/01-lista.html`, con datos fijos en React.
 - Componentes: `ProjectList`, `ProjectRow`, `GateChip`, `ScanButton`.
 - Incluir los estados de fila: normal, en cola, escaneando (paso y barra), error.
