@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Sonar Local: agregar proyecto, elegir carpeta</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,500;8..144,600&amp;family=Roboto+Mono:wght@400&amp;display=swap">
+<style>
+body{margin:0;background:#F4F3FA}
+a{color:#3F51B5}a:hover{color:#2A3990}
+</style>
+</helmet>
+<div style="min-height: 760px; position: relative; background: #F4F3FA; color: #1B1B21; font-family: 'Roboto Flex', Roboto, -apple-system, 'Segoe UI', sans-serif; font-size: 14px; line-height: 20px">
+
+  <div aria-hidden="true" style="max-width: 880px; margin: 0 auto; padding: 40px 24px; display: flex; flex-direction: column; gap: 20px">
+    <h1 style="margin: 0; font-size: 28px; line-height: 36px; font-weight: 500">Proyectos</h1>
+    <div style="background: #FFFFFF; border-radius: 16px; display: flex; flex-direction: column">
+      <div style="height: 72px; padding: 0 24px; display: flex; align-items: center; font-size: 16px; font-weight: 500">Back Process BFF</div>
+      <div style="height: 72px; padding: 0 24px; display: flex; align-items: center; font-size: 16px; font-weight: 500; border-top: 1px solid #E4E1EC">Back Process Web Client</div>
+      <div style="height: 72px; padding: 0 24px; display: flex; align-items: center; font-size: 16px; font-weight: 500; border-top: 1px solid #E4E1EC">Credit Risk Assessment</div>
+      <div style="height: 72px; padding: 0 24px; display: flex; align-items: center; font-size: 16px; font-weight: 500; border-top: 1px solid #E4E1EC">BUM</div>
+    </div>
+  </div>
+
+  <div style="position: absolute; inset: 0; background: rgba(27, 27, 33, 0.32); display: flex; align-items: center; justify-content: center; padding: 24px">
+    <section role="dialog" aria-labelledby="d1-title" style="width: 100%; max-width: 560px; background: #ECEAF4; border-radius: 28px; padding: 24px; display: flex; flex-direction: column; gap: 16px; box-sizing: border-box">
+      <div style="display: flex; flex-direction: column; gap: 16px">
+        <h2 id="d1-title" style="margin: 0; font-size: 24px; line-height: 32px; font-weight: 400">Agregar proyecto</h2>
+        <p style="margin: 0; color: #45464F; font-size: 14px; line-height: 20px; letter-spacing: 0.25px">Elige la carpeta del proyecto. El tipo, el nombre y la clave se detectan solos.</p>
+      </div>
+
+      <div style="position: relative; margin-top: 8px">
+        <label for="f-folder" style="position: absolute; top: -9px; left: 12px; padding: 0 4px; background: #ECEAF4; color: {{primary}}; font-size: 12px; line-height: 16px">Carpeta</label>
+        <div style="display: flex; align-items: center; height: 56px; border: 2px solid {{primary}}; border-radius: 4px; padding: 0 4px 0 14px; box-sizing: border-box">
+          <input id="f-folder" type="text" value="/Users/claud/work/creditos/bsol-business-api-customer-offer" style="flex: 1; min-width: 0; border: 0; background: transparent; color: #1B1B21; font-family: 'Roboto Mono', ui-monospace, Menlo, monospace; font-size: 13px; outline: none">
+          <button type="button" aria-label="Elegir carpeta en Finder" title="Elegir carpeta" style="width: 48px; height: 48px; border-radius: 24px; border: 0; background: transparent; color: #45464F; display: inline-flex; align-items: center; justify-content: center; cursor: pointer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path></svg></button>
+        </div>
+        <p style="margin: 4px 0 0; padding: 0 16px; color: #45464F; font-size: 12px; line-height: 16px">Pega la ruta o usa el ícono para abrir el selector de carpetas.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <h3 style="margin: 8px 0 4px; font-size: 14px; line-height: 20px; font-weight: 500; color: #45464F; letter-spacing: 0.1px">Sin agregar en tu workspace</h3>
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; border-radius: 12px; overflow: hidden; background: #F4F3FA">
+          <li>
+            <button type="button" aria-pressed="true" style="width: 100%; min-height: 56px; padding: 8px 16px; border: 0; background: #DFE0FF; color: #0E1A63; font: inherit; text-align: left; display: flex; align-items: center; gap: 16px; cursor: pointer">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"></circle><circle cx="10" cy="10" r="4" fill="currentColor"></circle></svg>
+              <span style="flex: 1; display: flex; flex-direction: column">
+                <span style="font-size: 15px; line-height: 22px; font-weight: 500">bsol-business-api-customer-offer</span>
+                <span style="font-size: 13px; line-height: 18px; opacity: 0.8">Proyecto .NET</span>
+              </span>
+            </button>
+          </li>
+          <li style="border-top: 1px solid #E4E1EC">
+            <button type="button" aria-pressed="false" style="width: 100%; min-height: 56px; padding: 8px 16px; border: 0; background: transparent; color: #1B1B21; font: inherit; text-align: left; display: flex; align-items: center; gap: 16px; cursor: pointer">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="#45464F" stroke-width="2"></circle></svg>
+              <span style="flex: 1; display: flex; flex-direction: column">
+                <span style="font-size: 15px; line-height: 22px; font-weight: 500">[otra carpeta sin agregar]</span>
+                <span style="font-size: 13px; line-height: 18px; color: #45464F">Proyecto JS / TS</span>
+              </span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 8px; padding-top: 8px">
+        <a href="Main.dc.html" style="height: 40px; padding: 0 12px; border-radius: 20px; color: {{primary}}; font-size: 14px; font-weight: 500; letter-spacing: 0.1px; display: inline-flex; align-items: center; text-decoration: none">Cancelar</a>
+        <a href="AddProjectConfirm.dc.html" style="height: 40px; padding: 0 24px; border-radius: 20px; background: {{primary}}; color: #FFFFFF; font-size: 14px; font-weight: 500; letter-spacing: 0.1px; display: inline-flex; align-items: center; text-decoration: none">Siguiente</a>
+      </div>
+    </section>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"primary":{"editor":"color","default":"#3F51B5","options":["#3F51B5","#006A60","#8B4A00"]},"$preview":{"width":1440,"height":760}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { primary: this.props.primary ?? '#3F51B5' };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Sonar Local: agregar proyecto, confirmar datos</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,500;8..144,600&amp;family=Roboto+Mono:wght@400&amp;display=swap">
+<style>
+body{margin:0;background:#F4F3FA}
+a{color:#3F51B5}a:hover{color:#2A3990}
+</style>
+</helmet>
+<div style="min-height: 760px; position: relative; background: #F4F3FA; color: #1B1B21; font-family: 'Roboto Flex', Roboto, -apple-system, 'Segoe UI', sans-serif; font-size: 14px; line-height: 20px">
+
+  <div aria-hidden="true" style="max-width: 880px; margin: 0 auto; padding: 40px 24px; display: flex; flex-direction: column; gap: 20px">
+    <h1 style="margin: 0; font-size: 28px; line-height: 36px; font-weight: 500">Proyectos</h1>
+    <div style="background: #FFFFFF; border-radius: 16px; display: flex; flex-direction: column">
+      <div style="height: 72px; padding: 0 24px; display: flex; align-items: center; font-size: 16px; font-weight: 500">Back Process BFF</div>
+      <div style="height: 72px; padding: 0 24px; display: flex; align-items: center; font-size: 16px; font-weight: 500; border-top: 1px solid #E4E1EC">Back Process Web Client</div>
+      <div style="height: 72px; padding: 0 24px; display: flex; align-items: center; font-size: 16px; font-weight: 500; border-top: 1px solid #E4E1EC">Credit Risk Assessment</div>
+      <div style="height: 72px; padding: 0 24px; display: flex; align-items: center; font-size: 16px; font-weight: 500; border-top: 1px solid #E4E1EC">BUM</div>
+    </div>
+  </div>
+
+  <div style="position: absolute; inset: 0; background: rgba(27, 27, 33, 0.32); display: flex; align-items: center; justify-content: center; padding: 24px">
+    <section role="dialog" aria-labelledby="d2-title" style="width: 100%; max-width: 560px; background: #ECEAF4; border-radius: 28px; padding: 24px; display: flex; flex-direction: column; gap: 20px; box-sizing: border-box">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <h2 id="d2-title" style="margin: 0; font-size: 24px; line-height: 32px; font-weight: 400">Confirmar datos</h2>
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap">
+          <span style="display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px 0 8px; border-radius: 8px; background: #D3F0DC; color: #0F5130; font-size: 13px; font-weight: 500"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3.5 8.3 2.9 2.9 6-6.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>Proyecto .NET detectado</span>
+          <span style="color: #45464F; font-size: 14px">Aún no existe en SonarQube</span>
+        </div>
+      </div>
+
+      <div style="position: relative">
+        <label for="f-name" style="position: absolute; top: -9px; left: 12px; padding: 0 4px; background: #ECEAF4; color: #45464F; font-size: 12px; line-height: 16px">Nombre</label>
+        <input id="f-name" type="text" value="CustomerOffer" style="width: 100%; height: 56px; box-sizing: border-box; border: 1px solid #767680; border-radius: 4px; padding: 0 16px; background: transparent; color: #1B1B21; font: inherit; font-size: 16px">
+      </div>
+
+      <div style="position: relative">
+        <label for="f-key" style="position: absolute; top: -9px; left: 12px; padding: 0 4px; background: #ECEAF4; color: #45464F; font-size: 12px; line-height: 16px">Clave en SonarQube</label>
+        <input id="f-key" type="text" value="bsol-business-api-customer-offer" style="width: 100%; height: 56px; box-sizing: border-box; border: 1px solid #767680; border-radius: 4px; padding: 0 16px; background: transparent; color: #1B1B21; font-family: 'Roboto Mono', ui-monospace, Menlo, monospace; font-size: 14px">
+        <p style="margin: 4px 0 0; padding: 0 16px; color: #45464F; font-size: 12px; line-height: 16px">Identificador único. Por defecto, el nombre de la carpeta.</p>
+      </div>
+
+      <div style="position: relative">
+        <label for="f-sln" style="position: absolute; top: -9px; left: 12px; padding: 0 4px; background: #ECEAF4; color: #45464F; font-size: 12px; line-height: 16px">Solución</label>
+        <select id="f-sln" style="width: 100%; height: 56px; box-sizing: border-box; border: 1px solid #767680; border-radius: 4px; padding: 0 12px; background: transparent; color: #1B1B21; font: inherit; font-size: 16px"><option>Bsol.Business.CustomerOffer.sln</option></select>
+      </div>
+
+      <fieldset style="border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px">
+        <legend style="padding: 0; margin-bottom: 8px; font-size: 14px; font-weight: 500; color: #45464F; letter-spacing: 0.1px">Capa</legend>
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid #767680; border-radius: 20px; overflow: hidden">
+          <sc-for list="{{layers}}" as="l" hint-placeholder-count="3">
+            <button type="button" onClick="{{l.pick}}" aria-pressed="{{l.pressed}}" style="{{l.style}}">
+              <sc-if value="{{l.on}}" hint-placeholder-val="{{ false }}"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3.5 8.3 2.9 2.9 6-6.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></sc-if>
+              {{l.label}}
+            </button>
+          </sc-for>
+        </div>
+      </fieldset>
+
+      <div style="display: flex; flex-direction: column">
+        <sc-for list="{{options}}" as="o" hint-placeholder-count="2">
+          <label style="display: flex; align-items: flex-start; gap: 16px; padding: 8px 0; cursor: pointer">
+            <input type="checkbox" checked="{{o.on}}" onChange="{{o.toggle}}" style="width: 18px; height: 18px; margin: 3px 0 0; accent-color: {{primary}}">
+            <span style="display: flex; flex-direction: column">
+              <span style="font-size: 16px; line-height: 24px">{{o.label}}</span>
+              <span style="font-size: 13px; line-height: 18px; color: #45464F">{{o.help}}</span>
+            </span>
+          </label>
+        </sc-for>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 8px">
+        <a href="AddProject.dc.html" style="height: 40px; padding: 0 12px; border-radius: 20px; color: {{primary}}; font-size: 14px; font-weight: 500; letter-spacing: 0.1px; display: inline-flex; align-items: center; text-decoration: none">Atrás</a>
+        <a href="AddProjectDone.dc.html" style="height: 40px; padding: 0 24px; border-radius: 20px; background: {{primary}}; color: #FFFFFF; font-size: 14px; font-weight: 500; letter-spacing: 0.1px; display: inline-flex; align-items: center; text-decoration: none">{{cta}}</a>
+      </div>
+    </section>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"primary":{"editor":"color","default":"#3F51B5","options":["#3F51B5","#006A60","#8B4A00"]},"$preview":{"width":1440,"height":760}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { layer: 'Business', create: true, scan: true };
+  }
+  renderVals() {
+    const primary = this.props.primary ?? '#3F51B5';
+    const layers = ['Frontend', 'BFF', 'Business'].map((label, i) => {
+      const on = this.state.layer === label;
+      return {
+        label, on, pressed: on ? 'true' : 'false',
+        pick: () => this.setState({ layer: label }),
+        style: 'height: 40px; border: 0; ' + (i > 0 ? 'border-left: 1px solid #767680; ' : '') +
+          'font: inherit; font-size: 14px; font-weight: 500; letter-spacing: 0.1px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; ' +
+          (on ? 'background: #DFE0FF; color: #0E1A63' : 'background: transparent; color: #1B1B21')
+      };
+    });
+    const options = [
+      { key: 'create', label: 'Crear el proyecto en SonarQube', help: 'Si ya existe con esa clave, solo se vincula.' },
+      { key: 'scan', label: 'Escanear al terminar', help: 'El primer escaneo tarda más porque compila toda la solución.' }
+    ].map((o) => ({
+      label: o.label, help: o.help, on: this.state[o.key],
+      toggle: () => this.setState({ [o.key]: !this.state[o.key] })
+    }));
+    const cta = this.state.scan ? 'Agregar y escanear' : 'Agregar proyecto';
+    return { primary, layers, options, cta };
+  }
+}
+</script>
+</body>
+</html>
