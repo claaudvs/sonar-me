@@ -1,0 +1,51 @@
+/* Tokens de docs/DISENO.md (Material 3 simple). */
+:root {
+  --bg: #f4f3fa;
+  --surface: #ffffff;
+  --surface-high: #eceaf4;
+  --on-surface: #1b1b21;
+  --on-surface-variant: #45464f;
+  --outline: #767680;
+  --outline-variant: #e4e1ec;
+  --primary: #3f51b5;
+  --primary-container: #dfe0ff;
+  --on-primary-container: #0e1a63;
+  --pass-bg: #d3f0dc;
+  --pass-fg: #0f5130;
+  --fail-bg: #ffdad6;
+  --fail-fg: #8c1d18;
+  --inverse-surface: #303036;
+
+  --font: "Roboto Flex", "Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--on-surface);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+}
+
+button {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+a {
+  color: var(--primary);
+}

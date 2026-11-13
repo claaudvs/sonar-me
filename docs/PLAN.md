@@ -2,7 +2,7 @@
 
 Trabaja un hito a la vez. No avances sin que el anterior funcione.
 
-## Hito 0: base
+## Hito 0: base ✅
 - Proyecto creado con `npm create tauri-app@latest` (React + TypeScript). ✅
 - En `tauri.conf.json`: `productName` y título de ventana "Sonar Local", 960×720.
 - Agregar plugins: `npm run tauri add dialog store opener notification single-instance`.

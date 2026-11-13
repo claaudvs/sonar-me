@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "sonar-me",
+  "productName": "Sonar Local",
   "version": "0.1.0",
   "identifier": "com.claud.sonar-me",
   "build": {
@@ -12,9 +12,9 @@
   "app": {
     "windows": [
       {
-        "title": "sonar-me",
-        "width": 800,
-        "height": 600
+        "title": "Sonar Local",
+        "width": 960,
+        "height": 720
       }
     ],
     "security": {
